@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle, #1a1a1a, #000);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3.8rem;
+}
+
+.subtitle {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  opacity: 0.8;
+}
+
+/* GLOW TEXT */
+.glow {
+  color: gold;
+  text-shadow: 0 0 10px orange,
+               0 0 20px gold,
+               0 0 40px red;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px gold; }
+  to { text-shadow: 0 0 40px orange; }
+}
+
+/* DIYAS */
+.diyas {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 80px 0;
+}
+
+.diya {
+  width: 70px;
+  height: 35px;
+  background: #6d3b00;
+  border-radius: 0 0 40px 40px;
+  position: relative;
+}
+
+.diya::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  width: 22px;
+  height: 40px;
+  background: orange;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: flame 1s infinite alternate;
+}
+
+@keyframes flame {
+  from { transform: translateX(-50%) scale(1); }
+  to { transform: translateX(-50%) scale(1.2); }
+}
+
+/* MESSAGE */
+.message {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.message h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: gold;
+}
+
+.message p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+/* STARS */
+.stars {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 70% 40%, white, transparent),
+    radial-gradient(1px 1px at 40% 80%, white, transparent),
+    radial-gradient(2px 2px at 90% 20%, white, transparent);
+  animation: twinkle 4s infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.3; }
+  to { opacity: 0.8; }
+}
+
+/* FOOTER */
+footer {
+  background: black;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .diyas {
+    gap: 25px;
+  }
+}
